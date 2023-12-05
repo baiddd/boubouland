@@ -1,5 +1,3 @@
-import { MainMenuScene, ColoringScene } from 'src/';
-
 // Create a Phaser game instance
 const config = {
   type: Phaser.AUTO,
