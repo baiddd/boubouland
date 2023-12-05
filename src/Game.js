@@ -17,7 +17,6 @@ let zoomOutButton;
 
 function preload() {
   // Load your images
-  this.load.image('background', 'img/bckg.jpg');
   this.load.image('image1', 'img/lion.png');
   this.load.image('image2', 'img/cat.png');
   // Add more images as needed
@@ -25,7 +24,7 @@ function preload() {
 
 function create() {
   // Add the background image
-  const background = this.add.image(400, 300, 'background');
+  const background = this.add.image(400, 300);
 
   // Create an array of image keys
   const imageKeys = ['image1', 'image2']; // Add more image keys here
