@@ -2,24 +2,31 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8" />
-    <title>Test</title>
+    <title>Cyber Orb demo</title>
     <style>
-      * {
-        padding: 0;
+      body {
         margin: 0;
-      }
-      canvas {
-        background: #eee;
-        display: block;
-        margin: 0 auto;
+        background: #333;
       }
     </style>
+    <script src="src/phaser-arcade-physics.2.2.2.min.js"></script>
+    <script src="src/Boot.js"></script>
+    <script src="src/Preloader.js"></script>
+    <script src="src/MainMenu.js"></script>
+    <script src="src/Howto.js"></script>
+    <script src="src/Game.js"></script>
   </head>
   <body>
-    <canvas id="myCanvas" width="480" height="320"></canvas>
-
     <script>
-      // JavaScript code goes here
+      (() => {
+        const game = new Phaser.Game(320, 480, Phaser.CANVAS, "game");
+        game.state.add("Boot", Ball.Boot);
+        game.state.add("Preloader", Ball.Preloader);
+        game.state.add("MainMenu", Ball.MainMenu);
+        game.state.add("Howto", Ball.Howto);
+        game.state.add("Game", Ball.Game);
+        game.state.start("Boot");
+      })();
     </script>
   </body>
 </html>
