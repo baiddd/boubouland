@@ -1,4 +1,4 @@
-import { MainMenuScene, ColoringScene } from './';
+import { MainMenuScene, ColoringScene } from 'src/';
 
 // Create a Phaser game instance
 const config = {
