@@ -1,4 +1,5 @@
-// Game.js contains the main game logic
+import { MainMenuScene, ColoringScene } from './scenes';
+
 // Create a Phaser game instance
 const config = {
   type: Phaser.AUTO,
