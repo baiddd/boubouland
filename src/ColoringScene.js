@@ -1,6 +1,6 @@
 // ColoringScene.js contains code for the coloring scene
-class ColoringScene extends Phaser.Scene {
-  constructor() {
+export class ColoringScene extends Phaser.Scene {
+   constructor() {
     super({ key: 'ColoringScene' });
     this.selectedImage = null;
     this.selectedColor = '#000000'; // Default color
