@@ -27,6 +27,30 @@ class MainMenu extends Phaser.Scene {
         this.scene.start('Coloring', { selectedImage: imageKey });
       });
       imageGroup.add(image);
+      this.input.on('wheel', (pointer, currentlyOver, dx, dy, dz, event) => {
+        if (this.input.pointer1.isDown && this.input.pointer2.isDown) {
+          const distance = Phaser.Math.Distance.Between(this.input.pointer1.x, this.input.pointer1.y, this.input.pointer2.x, this.input.pointer2.y);
+          if (distance > 10) {
+            // Adjust the scale of images based on the pinch gesture
+            const newScale = image.scaleX + dy * 0.001;
+            image.setScale(Math.min(Math.max(newScale, 0.2), 2)); // Limit the scale
+          }
+        }
+      });
+  
+        // Handle mouse wheel event for pinch-to-zoom on computers
+      this.input.on('wheel', (pointer, gameObjects, deltaX, deltaY, deltaZ) => {
+        const mouseWheel = this.input.mousePointer;
+        if (mouseWheel.wheelDeltaY() > 0) {
+          // Zoom in
+          const newScale = image.scaleX * 1.1;
+          image.setScale(Math.min(Math.max(newScale, 0.2), 2)); // Limit the scale
+        } else {
+          // Zoom out
+          const newScale = image.scaleX * 0.9;
+          image.setScale(Math.min(Math.max(newScale, 0.2), 2)); // Limit the scale
+        }
+      });
     });
   }
 
