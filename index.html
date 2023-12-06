@@ -15,6 +15,7 @@
     <script src="src/Coloring.js"></script>
     <script src="src/MainMenu.js"></script>
     <script src="src/Game.js"></script>
+    <script src="src/Boot.js"></script>
   </head>
   <body>
     <script>
@@ -25,7 +26,8 @@
         game.state.add("MainMenu", Coloriage.MainMenu);
         game.state.add("Coloring", Coloriage.Coloring);
         game.state.add("Game", Coloriage.Game);
-        game.state.start("Game");
+        game.state.add("Boot", Coloriage.Boot);
+        game.state.start("Boot");
       })();
     </script>
   </body>
