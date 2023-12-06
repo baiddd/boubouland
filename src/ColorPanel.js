@@ -1,4 +1,4 @@
-export class ColorPanel {
+class ColorPanel {
   constructor(scene) {
     this.scene = scene;
     this.colors = [
@@ -51,3 +51,47 @@ export class ColorPanel {
     });
   }
 }
+
+class ColorPanel {
+  constructor(scene) {
+    this.scene = scene;
+    this.colors = [
+      '#000000', '#808080', '#C0C0C0', '#FFFFFF', '#FF0000', '#800000', '#FFFF00', '#808000',
+      '#00FF00', '#008000', '#00FFFF', '#008080', '#0000FF', '#000080', '#FF00FF', '#800080',
+      // Add more colors as needed
+    ]; // Array of various color hex codes
+
+    this.createColorPanel();
+  }
+
+  createColorPanel() {
+    const panelX = 20;
+    const panelY = this.scene.sys.game.config.height - 80;
+    const buttonWidth = 30;
+    const buttonHeight = 30;
+    const spacing = 5;
+    const columns = 12;
+
+    let row = 0;
+    let col = 0;
+
+    this.colors.forEach((color, index) => {
+      const x = panelX + col * (buttonWidth + spacing);
+      const y = panelY + row * (buttonHeight + spacing);
+
+      const button = this.scene.add.rectangle(x, y, buttonWidth, buttonHeight, parseInt(color.replace('#', '0x')));
+      button.setInteractive();
+      button.on('pointerdown', () => {
+        this.scene.setSelectedColor(color);
+      });
+
+      col++;
+      if (col === columns) {
+        col = 0;
+        row++;
+      }
+    });
+  }
+}
+
+export { ColorPanel }; 
