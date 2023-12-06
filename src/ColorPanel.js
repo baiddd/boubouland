@@ -34,10 +34,10 @@ class ColorPanel {
     let col = 0;
 
     this.colors.forEach((color, index) => {
-      const x = panelX + col * (buttonWidth + spacing);
-      const y = panelY + row * (buttonHeight + spacing);
 
-      const button = this.scene.add.rectangle(x, y, buttonWidth, buttonHeight, parseInt(color.replace('#', '0x')));
+      const button = this.scene.add.rectangle(0, buttonWidth, buttonHeight, parseInt(color.replace('#', '0x')));
+      button.setOrigin(0, 1);
+      button.setDepth(0);
       button.setInteractive();
       button.on('pointerdown', () => {
         this.scene.setSelectedColor(color);
