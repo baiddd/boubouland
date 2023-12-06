@@ -21,7 +21,7 @@ class MainMenu extends Phaser.Scene {
     const startY = centerY - 150 * imageScale;
     const xOffset = 200 * imageScale;
     images.forEach((imageKey, index) => {
-      const image = this.add.image(startX + index * xOffset, startY, key).setInteractive();
+      const image = this.add.image(startX + index * xOffset, startY, imageKey).setInteractive();
       image.setScale(imageScale * 0.5);
       image.on('pointerdown', () => {
         this.handleImageSelection(imageKey);
