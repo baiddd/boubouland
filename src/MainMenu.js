@@ -13,7 +13,7 @@ export class MainMenu extends Phaser.Scene {
 
   create() {
     const images = ['lion', 'cat']; // Add more image keys here
-    const imageScale = 0.5;
+    const imageScale = 0.1;
     const imageSpacing = 150;
 
     images.forEach((imageKey, index) => {
