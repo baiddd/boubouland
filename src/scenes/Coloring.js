@@ -11,7 +11,7 @@ class Coloring extends Phaser.Scene {
 
   preload() {
     const { selectedImage } = this.scene.settings.data;
-    this.load.image(selectedImage, `img/${selectedImage}.png`);
+    this.load.image(selectedImage, `/img/${selectedImage}.png`);
   }
 
   create() {

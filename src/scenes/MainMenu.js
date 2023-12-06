@@ -24,15 +24,12 @@ class MainMenu extends Phaser.Scene {
       const image = this.add.image(startX + index * xOffset, startY, imageKey).setInteractive();
       image.setScale(imageScale * 0.5);
       image.on('pointerdown', () => {
-        this.handleImageSelection(imageKey);
+        this.scene.start('ColoringScene', { selectedImage: imageKey });
       });
       imageGroup.add(image);
     });
   }
-  handleImageSelection(selectedImageKey) {
-    // Transition to the ColoringGameScene, passing the selected image key
-    this.scene.start('Coloring', { selectedImageKey });
-  }
+
 }
 
 export {MainMenu};
