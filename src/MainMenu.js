@@ -5,7 +5,6 @@ export class MainMenu extends Phaser.Scene {
 
   preload() {
     // Preload your images...
-    this.load.image('background', 'img/bckg.jpg');
     this.load.image('lion', 'img/lion.png');
     this.load.image('cat', 'img/cat.png');
     // Add more images as needed
