@@ -1,4 +1,4 @@
-import { downloadImage } from '../helpers/downloadHelper.js';
+
 export class Coloring extends Phaser.Scene {
   constructor() {
     super({ key: 'Coloring' });
@@ -121,6 +121,14 @@ export class Coloring extends Phaser.Scene {
 
   stopDrawing() {
     // Stop drawing when the pointer is up
+  }
+  downloadImage(canvas, filename = 'colored_image.png') {
+    const link = document.createElement('a');
+    link.href = canvas.toDataURL('image/png');
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   }
 
   // Other methods for handling zooming, coloring logic, etc.
