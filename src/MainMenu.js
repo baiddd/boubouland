@@ -1,11 +1,10 @@
-// MainMenuScene.js contains code for the main menu scene
-export class MainMenuScene extends Phaser.Scene {
+export class MainMenu extends Phaser.Scene {
   constructor() {
-    super({ key: 'MainMenuScene' });
+    super({ key: 'MainMenu' });
   }
 
   preload() {
-    // Preload your images
+    // Preload your images...
     this.load.image('background', 'img/bckg.jpg');
     this.load.image('lion', 'img/lion.png');
     this.load.image('cat', 'img/cat.png');
@@ -13,10 +12,17 @@ export class MainMenuScene extends Phaser.Scene {
   }
 
   create() {
-    const background = this.add.image(window.innerWidth / 2, window.innerHeight / 2, 'background');
+    const images = ['lion', 'cat']; // Add more image keys here
+    const imageScale = 0.5;
+    const imageSpacing = 150;
 
-    const imageKeys = ['lion', 'cat']; // Add more image keys here
+    images.forEach((imageKey, index) => {
+      const xPos = (index + 1) * imageSpacing;
+      const image = this.add.image(xPos, this.cameras.main.centerY, imageKey).setScale(imageScale).setInteractive();
 
-    // ... (code for creating gallery of images and handling image selection)
+      image.on('pointerdown', () => {
+        this.scene.start('ColoringScene', { selectedImage: imageKey });
+      });
+    });
   }
 }
