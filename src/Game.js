@@ -1,15 +1,11 @@
-import { MainMenu } from './MainMenu.js';
-import { Coloring } from './Coloring.js';
+import { MainMenu } from './scenes/MainMenu.js';
+import { Coloring } from './scenes/Coloring.js';
 
 // Create a Phaser game instance
 const config = {
   type: Phaser.AUTO,
-  scale: {
-    mode: Phaser.Scale.RESIZE,
-    parent: 'gameContainer',
-    width: '100%',
-    height: '100%',
-  },
+  width: window.innerWidth,
+  height: window.innerHeight,
   scene: [MainMenu, Coloring]
 };
 

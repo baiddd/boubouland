@@ -1,0 +1,39 @@
+/* Default styles for all screen sizes */
+/* Add your default styles here */
+
+  
+canvas {
+    background-color: #ccc; /* Set the canvas background color to white */
+    display: block;
+    margin: 0 auto;
+}
+  
+/* Media query for smaller devices */
+@media screen and (max-width: 768px) {
+    /* Styles for smaller devices */
+    /* Adjust UI elements for smaller screens */
+    canvas {
+        width: 80%; /* Adjust canvas width for smaller screens */
+        margin: 20px auto; /* Center the canvas */
+    }
+  }
+  
+  /* Media query for tablets */
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    /* Styles for tablets */
+    /* Modify UI elements for tablet-sized screens */
+    canvas {
+        width: 70%; /* Adjust canvas width for tablets */
+        margin: 30px auto; /* Center the canvas */
+    }
+  }
+  
+  /* Media query for larger devices or desktops */
+  @media screen and (min-width: 1025px) {
+    /* Styles for larger devices or desktops */
+    /* Adjust UI elements for larger screens */
+    canvas {
+        width: 50%; /* Adjust canvas width for larger screens */
+        margin: 50px auto; /* Center the canvas */
+    }
+  }
