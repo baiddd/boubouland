@@ -99,7 +99,7 @@ class Coloring extends Phaser.Scene {
     const downloadButton = this.add.text(20, 50, 'Download Image', { fontSize: '24px', fill: '#fff' });
     downloadButton.setInteractive();
     downloadButton.on('pointerdown', () => {
-      downloadImage(this, canvas);
+      this.downloadImage(this, canvas);
     });
 
     // Zoom buttons
@@ -110,7 +110,7 @@ class Coloring extends Phaser.Scene {
       this.image.setScale(this.zoomLevel);
     });
 
-    const zoomOutButton = this.add.text(this.cameras.main.width - 200, 20, 'Zoom Out', { fontSize: '24px', fill: '#fff' });
+    const zoomOutButton = this.add.text(this.cameras.main.width - 100, 50, 'Zoom Out', { fontSize: '24px', fill: '#fff' });
     zoomOutButton.setInteractive();
     zoomOutButton.on('pointerdown', () => {
       if (this.zoomLevel > 0.1) {
@@ -135,6 +135,7 @@ class Coloring extends Phaser.Scene {
   stopDrawing() {
     // Stop drawing when the pointer is up
   }
+
   downloadImage(canvas, filename = 'colored_image.png') {
     const link = document.createElement('a');
     link.href = canvas.toDataURL('image/png');
