@@ -21,7 +21,7 @@ export class MainMenu extends Phaser.Scene {
       const image = this.add.image(xPos, this.cameras.main.centerY, imageKey).setScale(imageScale).setInteractive();
 
       image.on('pointerdown', () => {
-        this.scene.start('ColoringScene', { selectedImage: imageKey });
+        this.scene.start('Coloring', { selectedImage: imageKey });
       });
     });
   }
