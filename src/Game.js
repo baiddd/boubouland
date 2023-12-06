@@ -1,6 +1,6 @@
 
-const Coloring = require('./scenes/Coloring.js');
-const MainMenu = require('./scenes/MainMenu.js');
+import {Coloring} from './scenes/Coloring.js';
+import {MainMenu} from './scenes/MainMenu.js';
 
 // Create a Phaser game instance
 

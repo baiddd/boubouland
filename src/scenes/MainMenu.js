@@ -34,4 +34,5 @@ class MainMenu extends Phaser.Scene {
     this.scene.start('Coloring', { selectedImageKey });
   }
 }
+
 export {MainMenu};
