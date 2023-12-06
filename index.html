@@ -19,25 +19,12 @@
     </style>
     <script src="src/phaser.min.js"></script>
     <script src="src/ColorPanel.js"></script>
-    <script src="src/Preloader.js"></script>
     <script src="src/Coloring.js"></script>
     <script src="src/MainMenu.js"></script>
     <script src="src/Game.js"></script>
-    <script src="src/Boot.js"></script>
   </head>
   <body>
     <div id="gameContainer"></div>
-    <script>
-      (() => {
-        const game = new Phaser.Game(320, 480, Phaser.CANVAS, "game");
-        game.state.add("ColorPanel", Coloriage.ColorPanel);
-        game.state.add("Preloader", Coloriage.Preloader);
-        game.state.add("MainMenu", Coloriage.MainMenu);
-        game.state.add("Coloring", Coloriage.Coloring);
-        game.state.add("Game", Coloriage.Game);
-        game.state.add("Boot", Coloriage.Boot);
-        game.state.start("Boot");
-      })();
-    </script>
+    <script src="src/Game.js" type="module"></script>
   </body>
 </html>
