@@ -18,7 +18,6 @@ class Coloring extends Phaser.Scene {
     this.image = this.add.image(this.cameras.main.centerX, this.cameras.main.centerY, this.scene.settings.data.selectedImage);
     this.imageWidth = this.image.displayWidth;
     this.imageHeight = this.image.displayHeight;
-    this.adjustImageSize(this.selectedImage);
       
     // Set up input events
       
