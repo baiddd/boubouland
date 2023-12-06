@@ -1,16 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Coloriage Game</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Load Phaser library -->
-  <script src="src/phaser.min.js"></script>
-  <script src="src/Game.js"></script>
-</head>
-<body>
-<div id="gameContainer"></div>
-<script src="src/Game.js" type="module"></script>
-
-</body>
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <title>Coloriage</title>
+    <style>
+      body {
+        margin: 0;
+        background: #333;
+      }
+    </style>
+    <script src="src/phaser.min.js"></script>
+    <script src="src/ColorPanel.js"></script>
+    <script src="src/Preloader.js"></script>
+    <script src="src/Coloring.js"></script>
+    <script src="src/MainMenu.js"></script>
+    <script src="src/Game.js"></script>
+  </head>
+  <body>
+    <script>
+      (() => {
+        const game = new Phaser.Game(320, 480, Phaser.CANVAS, "game");
+        game.state.add("ColorPanel", Coloriage.ColorPanel);
+        game.state.add("Preloader", Coloriage.Preloader);
+        game.state.add("MainMenu", Coloriage.MainMenu);
+        game.state.add("Coloring", Coloriage.Coloring);
+        game.state.add("Game", Coloriage.Game);
+        game.state.start("Boot");
+      })();
+    </script>
+  </body>
 </html>
