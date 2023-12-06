@@ -7,11 +7,12 @@ export class MainMenu extends Phaser.Scene {
     // Preload your images...
     this.load.image('lion', 'img/lion.png');
     this.load.image('cat', 'img/cat.png');
+    this.load.image('kawaii02', 'img/kawaii02.png');
     // Add more images as needed
   }
 
   create() {
-    const images = ['lion', 'cat']; // Add more image keys here
+    const images = ['lion', 'cat', 'kawaii02']; // Add more image keys here
     const imageScale = 0.5;
     const imageSpacing = 150;
 
