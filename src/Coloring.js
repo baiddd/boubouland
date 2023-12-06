@@ -34,7 +34,7 @@ export class Coloring extends Phaser.Scene {
     // Set up return to menu button
     this.returnButton = this.add.text(140, 20, 'Return to Menu', { fill: '#ffffff', fontSize: '16px' }).setInteractive();
     this.returnButton.on('pointerdown', () => {
-      this.scene.start('MainMenuScene');
+      this.scene.start('MainMenu');
     });
 
     // Set up download button for colored image
