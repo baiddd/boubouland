@@ -5,10 +5,10 @@ export class Coloring extends Phaser.Scene {
     super({ key: 'Coloring' });
     this.selectedImage = null;
     this.selectedColor = '#000000';
+    this.zoomLevel = 1.0;
   }
 
   preload() {
-    // Load the selected image for coloring...
     const { selectedImage } = this.scene.settings.data;
     this.load.image(selectedImage, `img/${selectedImage}.png`);
   }
@@ -24,21 +24,21 @@ export class Coloring extends Phaser.Scene {
     this.zoomOutButton = this.add.text(70, 20, '-', { fill: '#ffffff', fontSize: '24px' }).setInteractive();
 
     this.zoomInButton.on('pointerdown', () => {
-      this.selectedImage.setScale(this.selectedImage.scaleX + 0.1);
+      this.zoomImage(0.1);
     });
 
     this.zoomOutButton.on('pointerdown', () => {
-      this.selectedImage.setScale(Math.max(0.1, this.selectedImage.scaleX - 0.1));
+      this.zoomImage(-0.1);
     });
 
     // Set up return to menu button
     this.returnButton = this.add.text(140, 20, 'Return to Menu', { fill: '#ffffff', fontSize: '16px' }).setInteractive();
     this.returnButton.on('pointerdown', () => {
-      this.scene.start('MainMenu');
+      this.scene.start('MainMenuScene');
     });
 
     // Set up download button for colored image
-    this.downloadButton = this.add.text(280, 20, 'Download Image', { fill: '#ffffff', fontSize: '16px' }).setInteractive();
+    this.downloadButton = this.add.text(300, 20, 'Download Image', { fill: '#ffffff', fontSize: '16px' }).setInteractive();
     this.downloadButton.on('pointerdown', () => {
       this.downloadImage();
     });
@@ -46,6 +46,11 @@ export class Coloring extends Phaser.Scene {
 
   setSelectedColor(color) {
     this.selectedColor = color;
+  }
+
+  zoomImage(factor) {
+    this.zoomLevel = Phaser.Math.Clamp(this.zoomLevel + factor, 0.1, 3); // Limit zoom between 10% to 300%
+    this.selectedImage.setScale(this.zoomLevel);
   }
 
   downloadImage() {
