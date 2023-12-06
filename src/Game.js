@@ -17,7 +17,3 @@ const config = {
 };
 
 const game = new Phaser.Game(config);
-game.scene.add('MainMenu', MainMenu);
-game.scene.add('Coloring', Coloring);
-// Start the main menu scene
-game.scene.start('MainMenu');
