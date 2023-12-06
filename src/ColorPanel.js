@@ -1,4 +1,4 @@
-export class ColorPanel extends Phaser.Scene {
+export class ColorPanel {
   constructor(scene) {
     this.scene = scene;
     this.colors = [
