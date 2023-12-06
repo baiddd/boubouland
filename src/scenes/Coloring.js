@@ -1,5 +1,4 @@
-
-export class Coloring extends Phaser.Scene {
+class Coloring extends Phaser.Scene {
   constructor() {
     super({ key: 'Coloring' });
     this.selectedImage = null;
@@ -133,3 +132,4 @@ export class Coloring extends Phaser.Scene {
 
   // Other methods for handling zooming, coloring logic, etc.
 }
+module.exports = Coloring;

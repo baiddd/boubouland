@@ -1,4 +1,4 @@
-export class MainMenu extends Phaser.Scene {
+class MainMenu extends Phaser.Scene {
   constructor() {
     super({ key: 'MainMenu' });
   }
@@ -34,3 +34,4 @@ export class MainMenu extends Phaser.Scene {
     this.scene.start('Coloring', { selectedImageKey });
   }
 }
+module.exports = MainMenu;
