@@ -132,4 +132,4 @@ class Coloring extends Phaser.Scene {
 
   // Other methods for handling zooming, coloring logic, etc.
 }
-module.exports = Coloring;
+export { Coloring };
