@@ -13,11 +13,11 @@ export class MainMenu extends Phaser.Scene {
 
   create() {
     const images = ['lion', 'cat', 'kawaii02']; // Add more image keys here
-    const imageScale = 0.5;
+    const imageScale = 0.4;
     const imageSpacing = 150;
 
     images.forEach((imageKey, index) => {
-      const xPos = (index + 1) * imageSpacing;
+      const xPos = this.cameras.main.width * (index + 1) * 0.25;
       const image = this.add.image(xPos, this.cameras.main.centerY, imageKey).setScale(imageScale).setInteractive();
 
       image.on('pointerdown', () => {
